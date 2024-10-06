@@ -4,7 +4,6 @@ from unittest.mock import patch, mock_open
 from io import StringIO
 from scripts.load_csv_data import Load_CSV_Data  # Replace with the correct import for your module
 
-
 class TestLoadData(unittest.TestCase):
 
     @patch("pandas.read_csv")
@@ -60,7 +59,7 @@ class TestLoadData(unittest.TestCase):
         with patch("builtins.print") as mocked_print:
             data = loader.get_data()
             self.assertIsNone(data)
-            mocked_print.assert_called_with("Data has not been loaded yet. Please call load_data first.")
+            mocked_print.assert_called_with("Data has not been loaded yet. Please call load_csv_data first.")
 
     @patch("pandas.read_csv")
     def test_get_data_after_loading(self, mock_read_csv):
